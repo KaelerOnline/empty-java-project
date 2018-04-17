@@ -75,8 +75,7 @@ public class JavaApp {
                     System.out.println(" ");
                     System.out.println("Introduzca un número."); //Pide un numero para guardar.
                     int numero= keyboard.nextInt();
-                    int modulo=numero%2;
-                    if(modulo==0){
+                    if(numero % 2==0){
                         System.out.println("Es par");
                     }
                     else{
