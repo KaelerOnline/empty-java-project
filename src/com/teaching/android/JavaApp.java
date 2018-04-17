@@ -16,7 +16,7 @@ public class JavaApp {
             double d= 65.55;    //64bits
             boolean bol= true;  //1bit
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2500);
                 System.out.println(b);
                 System.out.println(c);
                 System.out.println(s);
@@ -25,6 +25,24 @@ public class JavaApp {
                 System.out.println(f);
                 System.out.println(d);
                 System.out.println(bol);
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            int a= 10;
+            b= 5;
+            System.out.println(" ");
+            try {
+                Thread.sleep(2500);
+                System.out.println(a+ b);
+                System.out.println(a- b);
+                System.out.println(a* b);
+                System.out.println(a/ b);
+                System.out.println(a% b);
+                System.out.println(++a);
+                System.out.println(--a);
+                System.out.println(a++);
+                System.out.println(a--);
+                System.out.println(a);
             } catch(InterruptedException e){
                 e.printStackTrace();
             }
