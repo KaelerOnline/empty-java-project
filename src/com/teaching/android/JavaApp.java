@@ -30,7 +30,8 @@ public class JavaApp {
             }
             int a= 10;
             b= 5;
-            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador. Retrasa la impresión de unas operaciónes aritméticas.
+            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
+                                                            // Retrasa la impresión de unas operaciónes aritméticas.
             try {
                 Thread.sleep(2500);
                 System.out.println(a+ b);
@@ -46,7 +47,8 @@ public class JavaApp {
             } catch(InterruptedException e){
                 e.printStackTrace();
             }
-            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador. Retrasa la impresión de unas operaciónes aritméticas.
+            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
+                                                            // Retrasa la impresión de unas operaciónes aritméticas.
             try {
                 Thread.sleep(2500);
                 System.out.println(2+5-3*2);
