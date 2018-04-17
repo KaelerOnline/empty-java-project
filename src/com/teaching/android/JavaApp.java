@@ -15,7 +15,7 @@ public class JavaApp {
             float f= 65f;       //32bits
             double d= 65.55;    //64bits
             boolean bol= true;  //1bit
-            try {
+            try {                                           // Efectua un retraso antes de imprimir los valores.
                 Thread.sleep(2500);
                 System.out.println(b);
                 System.out.println(c);
@@ -30,7 +30,7 @@ public class JavaApp {
             }
             int a= 10;
             b= 5;
-            System.out.println(" ");
+            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador. Retrasa la impresión de unas operaciónes aritméticas.
             try {
                 Thread.sleep(2500);
                 System.out.println(a+ b);
@@ -43,6 +43,17 @@ public class JavaApp {
                 System.out.println(a++);
                 System.out.println(a--);
                 System.out.println(a);
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador. Retrasa la impresión de unas operaciónes aritméticas.
+            try {
+                Thread.sleep(2500);
+                System.out.println(2+5-3*2);
+                System.out.println(2*4*2/2);
+                System.out.println(1/2);
+                System.out.println(5*(1/2));
+                System.out.println(5f*1/2);
             } catch(InterruptedException e){
                 e.printStackTrace();
             }
