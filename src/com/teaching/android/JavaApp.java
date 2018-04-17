@@ -22,8 +22,8 @@ public class JavaApp {
                     float f = 65f;       //32bits
                     double d = 65.55;    //64bits
                     boolean bol = true;  //1bit
-                    try {                                           //Efectua un retraso antes de imprimir los valores.
-                        Thread.sleep(2500);
+                    try {
+                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
                         System.out.println(b);
                         System.out.println(c);
                         System.out.println(s);
@@ -39,9 +39,8 @@ public class JavaApp {
                 case 2:
                     int a = 10; b = 5;
                     System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
-                                                                    //Retrasa la impresión de unas operaciónes aritméticas.
                     try {
-                        Thread.sleep(2500);
+                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
                         System.out.println(a + b);
                         System.out.println(a - b);
                         System.out.println(a * b);
@@ -59,9 +58,8 @@ public class JavaApp {
 
                 case 3:
                     System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
-                                                                    //Retrasa la impresión de unas operaciónes aritméticas.
                     try {
-                        Thread.sleep(2500);
+                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
                         System.out.println(2 + 5 - 3 * 2);
                         System.out.println(2 * 4 * 2 / 2);
                         System.out.println(1 / 2);
@@ -75,7 +73,9 @@ public class JavaApp {
                     System.out.println(" ");
                     System.out.println("Introduzca un número."); //Pide un numero para guardar.
                     int numero= keyboard.nextInt();
-                    if(numero % 2==0){
+                    if(numero % 2==0){                          //Comprueba si la variable NUMERO es divisible por 2.
+                                                                //En caso de serlo se imprimirá en pantalla que es par.
+                                                                //En caso contrario se imprimirá en pantalla que es impar.
                         System.out.println("Es par");
                     }
                     else{
@@ -83,7 +83,8 @@ public class JavaApp {
                     }
                     break;
 
-                default:
+                default:                                        //En caso de que no se obtenga con Scanner un valor que valga para
+                                                                //Switch/Case, se irá a la opcion por defecto y cerrará.
                     System.out.println("No ha introducido una opción correcta");
                     break;
             }
