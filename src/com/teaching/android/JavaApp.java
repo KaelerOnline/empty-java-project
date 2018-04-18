@@ -111,9 +111,9 @@ public class JavaApp {
                         }else{
                             guessed= true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
                         }
-                    }while(guessed!=true && attempt>0);         //Condiciones del bucle.
+                    }while(!guessed && attempt>0);         //Condiciones del bucle.
 
-                    if(guessed==true){                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
+                    if(guessed){                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
                         System.out.println("¡Correcto!¡Y te quedaron "+(attempt-1)+" intentos!");
                     }else{
                         System.out.println("Incorrecto.");
