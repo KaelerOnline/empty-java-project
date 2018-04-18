@@ -1,5 +1,6 @@
 package com.teaching.android;
 
+import java.sql.SQLOutput;
 import java.util.Random;                                        //Declaramos paquetes de funciones que hay que importar para usar más tarde.
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class JavaApp {
         System.out.println("4. Par o Impar.");
         System.out.println("5. Simple juego de adivinación del número.");
         System.out.println("6. Impresión de los 20 primeros números pares.");
+        System.out.println("7. Ejercicio 'Persona'.");
         Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
         int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
         switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
@@ -248,6 +250,25 @@ public class JavaApp {
                         }
                     }
                 }
+                break;
+            case 7:                                 //Práctica de creación y uso de clases y métodos.
+                Persona p1 = new Persona("Paco",200f);
+                Persona p2 = new Persona("Pepe",0f);
+                try {
+                    Thread.sleep(500);
+                    System.out.println(p1.getNombre() + " tiene " + p1.getDinero());
+                    Thread.sleep(500);
+                    System.out.println(p2.getNombre() + " tiene " + p2.getDinero());
+                    Thread.sleep(500);
+                    p2.Pagar(p1, 200f);
+                    Thread.sleep(500);
+                    System.out.println("Ahora " + p1.getNombre() + " tiene " + p1.getDinero());
+                    Thread.sleep(500);
+                    System.out.println("Ahora " + p2.getNombre() + " tiene " + p2.getDinero());
+                }   catch(InterruptedException e){
+                    e.printStackTrace();
+                }
+
                 break;
 
             default:                                        //En caso de que no se obtenga con Scanner un valor que valga para
