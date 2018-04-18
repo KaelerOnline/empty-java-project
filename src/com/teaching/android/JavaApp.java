@@ -1,5 +1,6 @@
 package com.teaching.android;
 
+import java.util.Random;                                        //Declaramos paquetes de funciones que hay que importar para usar más tarde.
 import java.util.Scanner;
 
 /**
@@ -8,10 +9,15 @@ import java.util.Scanner;
 public class JavaApp {
 
         public static void main(String[] args) {
-            System.out.println("Práctica tipos primitivos. Introduzca del 1 al 4."); //Pide al usuario que introduzca un número.
-            Scanner keyboard = new Scanner(System.in);
-            int valor = keyboard.nextInt();
-            switch (valor) {                                        //Efectua una comprobación de cual opción se ejecutará.
+            System.out.println("Práctica tipos primitivos. Elija:"); //Pide al usuario que introduzca un número.
+            System.out.println("1. Demostración de tipos de variables.");
+            System.out.println("2. Operaciones aritméticas básicas.");
+            System.out.println("3. Demostración de la lógica aritmética de Java.");
+            System.out.println("4. Par o Impar.");
+            System.out.println("5. Simple juego de adivinación del número.");
+            Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
+            int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
+            switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
                 case 1:
                     System.out.println(" ");
                     byte b = 65;         //8bits
@@ -23,7 +29,7 @@ public class JavaApp {
                     double d = 65.55;    //64bits
                     boolean bol = true;  //1bit
                     try {
-                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
+                        Thread.sleep(2500);                 //Retrasa la impresión de los distintos tipos de variables.
                         System.out.println(b);
                         System.out.println(c);
                         System.out.println(s);
@@ -38,9 +44,9 @@ public class JavaApp {
                     break;
                 case 2:
                     int a = 10; b = 5;
-                    System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
+                    System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                     try {
-                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
+                        Thread.sleep(2500);                 //Retrasa la impresión de unas operaciónes aritméticas.
                         System.out.println(a + b);
                         System.out.println(a - b);
                         System.out.println(a * b);
@@ -57,9 +63,9 @@ public class JavaApp {
                     break;
 
                 case 3:
-                    System.out.println(" ");                        //Fuerza a crear un espacio en blanco como separador.
+                    System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                     try {
-                        Thread.sleep(2500);                     //Retrasa la impresión de unas operaciónes aritméticas.
+                        Thread.sleep(2500);                 //Retrasa la impresión de unas operaciónes aritméticas.
                         System.out.println(2 + 5 - 3 * 2);
                         System.out.println(2 * 4 * 2 / 2);
                         System.out.println(1 / 2);
@@ -76,16 +82,49 @@ public class JavaApp {
                     if(numero % 2==0){                          //Comprueba si la variable NUMERO es divisible por 2.
                                                                 //En caso de serlo se imprimirá en pantalla que es par.
                                                                 //En caso contrario se imprimirá en pantalla que es impar.
-                        System.out.println("Es par");
+                        System.out.println (numero+" es par");
                     }
                     else{
-                        System.out.println("Es impar");
+                        System.out.println (numero+" es impar");
                     }
+                    break;
+                case 5:
+                    boolean guessed= false;                     //Declaramos un booleano.
+                    int attempt= 3;                             //Declaramos un limitador.
+                    Random generator= new Random();             //Hacemos que el sistema prepare un generador aleatorio.
+                    int target= generator.nextInt(10)+1;//Declaramos que una variable sea un número aleatorio.
+                    do{                                         //Bucle para iniciar el juego.
+                        System.out.println(" ");
+                        System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
+                        int input= keyboard.nextInt();
+                        if(input!=target){                      //Comparamos si el número introducido es distinto del generado.
+                            guessed= false;                     //Declaramos el booleano como falso.
+                            --attempt;                          //Le restamos al limitador.
+                            System.out.println("Incorrecto.");
+                            if(input>target){                   //Comprueba si el número introducido es mayor.
+                                System.out.println("¡Menor!");
+                            }
+                            else{
+                                System.out.println("¡Mayor!");
+                            }
+                            System.out.println("Intentos restantes:"+attempt);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
+                        }else{
+                            guessed= true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
+                        }
+                    }while(guessed!=true && attempt>0);         //Condiciones del bucle.
+
+                    if(guessed==true){                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
+                        System.out.println("¡Correcto!¡Y te quedaron "+(attempt-1)+" intentos!");
+                    }else{
+                        System.out.println("Incorrecto.");
+                        System.out.println("El número correcto era:"+target);
+                    }
+
                     break;
 
                 default:                                        //En caso de que no se obtenga con Scanner un valor que valga para
                                                                 //Switch/Case, se irá a la opcion por defecto y cerrará.
-                    System.out.println("No ha introducido una opción correcta");
+                    System.out.println("No ha introducido una opción correcta.");
                     break;
             }
         }
