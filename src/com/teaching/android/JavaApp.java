@@ -124,8 +124,15 @@ public class JavaApp {
                     break;
 
                 case 6:                                     //Práctica básica de bucle FOR con números pares.
-                    for(int par=0; par<=40; par=par+2){
-                        System.out.println(par);
+                    for(int par=0; par<=40; par++) {
+                        if (par % 2 == 0) {
+                            try {
+                                Thread.sleep(0500);
+                                System.out.println(par);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                     break;
 
