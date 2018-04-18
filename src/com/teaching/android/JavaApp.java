@@ -90,145 +90,151 @@ public class JavaApp {
                 }
                 break;
             case 5:                                         //Práctica de bucle while/do while con juego básico.
-                System.out.println(" ");
-                System.out.println("¿Como de dificil lo quieres?.");
-                System.out.println("1. Fácil (10 intentos)");
-                System.out.println("2. Intermedio (5 intentos)");
-                System.out.println("3. Difícil (3 intentos)");
-                int difficulty = keyboard.nextInt();
-                switch (difficulty) {
-                    case 1:
-                        System.out.println("Has elegido FÁCIL.");
-                        boolean guessed;                     //Declaramos un booleano.
-                        int attempt = 10;                             //Declaramos un limitador.
-                        Random generator = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
-                        int target = generator.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
-                        do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
-                            int input = keyboard.nextInt();
-                            if (input != target) {                      //Comparamos si el número introducido es distinto del generado.
-                                guessed = false;                     //Declaramos el booleano como falso.
-                                --attempt;                          //Le restamos al limitador.
-                                System.out.println("Incorrecto.");
-                                if (input > target) {                   //Comprueba si el número introducido es mayor.
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Menor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
+                boolean replay;                             //Declaramos booleano para la posibilidad de salir del juego.
+                do {
+                    System.out.println(" ");                //Menú de dificultad.
+                    System.out.println("¿Como de dificil lo quieres?.");
+                    System.out.println("1. Fácil (10 intentos)");
+                    System.out.println("2. Intermedio (5 intentos)");
+                    System.out.println("3. Difícil (3 intentos)");
+                    int difficulty = keyboard.nextInt();
+                    switch (difficulty) {                   //Declaraciones Switch/Case para las distintas dificultades.
+                        case 1:
+                            System.out.println("Has elegido FÁCIL.");
+                            boolean guessed;                     //Declaramos un booleano.
+                            int attempt = 10;                             //Declaramos un limitador.
+                            Random generator = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
+                            int target = generator.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
+                            do {                                         //Bucle para iniciar el juego.
+                                System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
+                                int input = keyboard.nextInt();
+                                if (input != target) {                      //Comparamos si el número introducido es distinto del generado.
+                                    guessed = false;                     //Declaramos el booleano como falso.
+                                    --attempt;                          //Le restamos al limitador.
+                                    System.out.println("Incorrecto.");
+                                    if (input > target) {                   //Comprueba si el número introducido es mayor.
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Menor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    } else {
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Mayor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        System.out.println("Intentos restantes:" + attempt);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
                                     }
                                 } else {
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Mayor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                    System.out.println("Intentos restantes:" + attempt);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
+                                    guessed = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
                                 }
+                            } while (!guessed && attempt > 0);         //Condiciones del bucle.
+
+                            if (guessed) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
+                                System.out.println("¡Correcto!¡Y te quedaron " + (attempt - 1) + " intentos!");
                             } else {
-                                guessed = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
-                            }
-                        } while (!guessed && attempt > 0);         //Condiciones del bucle.
-
-                        if (guessed) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
-                            System.out.println("¡Correcto!¡Y te quedaron " + (attempt - 1) + " intentos!");
-                        } else {
-                            System.out.println("Incorrecto.");
-                            System.out.println("El número correcto era:" + target);
-                        }
-
-                        break;
-                    case 2:
-                        System.out.println("Has elegido INTERMEDIO.");
-                        boolean guessed2;                     //Declaramos un booleano.
-                        int attempt2 = 5;                             //Declaramos un limitador.
-                        Random generator2 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
-                        int target2 = generator2.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
-                        do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
-                            int input2 = keyboard.nextInt();
-                            if (input2 != target2) {                      //Comparamos si el número introducido es distinto del generado.
-                                guessed2 = false;                     //Declaramos el booleano como falso.
-                                --attempt2;                          //Le restamos al limitador.
                                 System.out.println("Incorrecto.");
-                                if (input2 > target2) {                   //Comprueba si el número introducido es mayor.
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Menor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
+                                System.out.println("El número correcto era:" + target);
+                            }
+
+                            break;
+                        case 2:
+                            System.out.println("Has elegido INTERMEDIO.");
+                            boolean guessed2;                     //Declaramos un booleano.
+                            int attempt2 = 5;                             //Declaramos un limitador.
+                            Random generator2 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
+                            int target2 = generator2.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
+                            do {                                         //Bucle para iniciar el juego.
+                                System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
+                                int input2 = keyboard.nextInt();
+                                if (input2 != target2) {                      //Comparamos si el número introducido es distinto del generado.
+                                    guessed2 = false;                     //Declaramos el booleano como falso.
+                                    --attempt2;                          //Le restamos al limitador.
+                                    System.out.println("Incorrecto.");
+                                    if (input2 > target2) {                   //Comprueba si el número introducido es mayor.
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Menor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    } else {
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Mayor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        System.out.println("Intentos restantes:" + attempt2);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
                                     }
                                 } else {
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Mayor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                    System.out.println("Intentos restantes:" + attempt2);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
+                                    guessed2 = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
                                 }
+                            } while (!guessed2 && attempt2 > 0);         //Condiciones del bucle.
+
+                            if (guessed2) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
+                                System.out.println("¡Correcto!¡Y te quedaron " + (attempt2 - 1) + " intentos!");
                             } else {
-                                guessed2 = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
-                            }
-                        } while (!guessed2 && attempt2 > 0);         //Condiciones del bucle.
-
-                        if (guessed2) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
-                            System.out.println("¡Correcto!¡Y te quedaron " + (attempt2 - 1) + " intentos!");
-                        } else {
-                            System.out.println("Incorrecto.");
-                            System.out.println("El número correcto era:" + target2);
-                        }
-
-                        break;
-                    case 3:
-                        System.out.println("Has elegido DIFÍCIL.");
-                        boolean guessed3;                    //Declaramos un booleano.
-                        int attempt3 = 3;                             //Declaramos un limitador.
-                        Random generator3 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
-                        int target3 = generator3.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
-                        do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
-                            int input3 = keyboard.nextInt();
-                            if (input3 != target3) {                      //Comparamos si el número introducido es distinto del generado.
-                                guessed3 = false;                     //Declaramos el booleano como falso.
-                                --attempt3;                          //Le restamos al limitador.
                                 System.out.println("Incorrecto.");
-                                if (input3 > target3) {                   //Comprueba si el número introducido es mayor.
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Menor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
+                                System.out.println("El número correcto era:" + target2);
+                            }
+
+                            break;
+                        case 3:
+                            System.out.println("Has elegido DIFÍCIL.");
+                            boolean guessed3;                    //Declaramos un booleano.
+                            int attempt3 = 3;                             //Declaramos un limitador.
+                            Random generator3 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
+                            int target3 = generator3.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
+                            do {                                         //Bucle para iniciar el juego.
+                                System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
+                                int input3 = keyboard.nextInt();
+                                if (input3 != target3) {                      //Comparamos si el número introducido es distinto del generado.
+                                    guessed3 = false;                     //Declaramos el booleano como falso.
+                                    --attempt3;                          //Le restamos al limitador.
+                                    System.out.println("Incorrecto.");
+                                    if (input3 > target3) {                   //Comprueba si el número introducido es mayor.
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Menor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                    } else {
+                                        try {
+                                            Thread.sleep(500);
+                                            System.out.println("¡Mayor!");
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        System.out.println("Intentos restantes:" + attempt3);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
                                     }
                                 } else {
-                                    try {
-                                        Thread.sleep(500);
-                                        System.out.println("¡Mayor!");
-                                    } catch (InterruptedException e) {
-                                        e.printStackTrace();
-                                    }
-                                    System.out.println("Intentos restantes:" + attempt3);  //Imprimimos en pantalla cuantos intentos quedan usando el limitador.
+                                    guessed3 = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
                                 }
+                            } while (!guessed3 && attempt3 > 0);         //Condiciones del bucle.
+
+                            if (guessed3) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
+                                System.out.println("¡Correcto!¡Y te quedaron " + (attempt3 - 1) + " intentos!");
                             } else {
-                                guessed3 = true;                      //Declaramos el booleano como verdadero si el número introducido coincide.
+                                System.out.println("Incorrecto.");
+                                System.out.println("El número correcto era:" + target3);
                             }
-                        } while (!guessed3 && attempt3 > 0);         //Condiciones del bucle.
 
-                        if (guessed3) {                          //Imprimimos el resultado final dependiendo de si hemos acertado o no.
-                            System.out.println("¡Correcto!¡Y te quedaron " + (attempt3 - 1) + " intentos!");
-                        } else {
-                            System.out.println("Incorrecto.");
-                            System.out.println("El número correcto era:" + target3);
-                        }
+                            break;
 
-                        break;
+                        default:
+                            System.out.println("No has elegido una opción correcta.");
+                            break;
 
-                    default:
-                        System.out.println("No has elegido una opción correcta.");
-                        break;
-
-                }
+                    }
+                    System.out.println("¿Quieres volver a jugar? [S]i   [N]o"); //Preguntamos si se quiere salir o no.
+                    String response = keyboard.next();
+                    replay = response.equals("S");                              //Comprueba si hemos dicho si volver a jugar o no.
+                } while (replay);
                 break;
 
             case 6:                                     //Práctica básica de bucle FOR con números pares.
