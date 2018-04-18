@@ -98,12 +98,12 @@ public class JavaApp {
                 int difficulty = keyboard.nextInt();
                 switch (difficulty) {
                     case 1:
-                        boolean guessed = false;                     //Declaramos un booleano.
+                        System.out.println("Has elegido FÁCIL.");
+                        boolean guessed;                     //Declaramos un booleano.
                         int attempt = 10;                             //Declaramos un limitador.
                         Random generator = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target = generator.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Has elegido FÁCIL.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input = keyboard.nextInt();
                             if (input != target) {                      //Comparamos si el número introducido es distinto del generado.
@@ -112,14 +112,14 @@ public class JavaApp {
                                 System.out.println("Incorrecto.");
                                 if (input > target) {                   //Comprueba si el número introducido es mayor.
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Menor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                     }
                                 } else {
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Mayor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
@@ -140,12 +140,12 @@ public class JavaApp {
 
                         break;
                     case 2:
-                        boolean guessed2 = false;                     //Declaramos un booleano.
+                        System.out.println("Has elegido INTERMEDIO.");
+                        boolean guessed2;                     //Declaramos un booleano.
                         int attempt2 = 5;                             //Declaramos un limitador.
                         Random generator2 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target2 = generator2.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Has elegido INTERMEDIO.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input2 = keyboard.nextInt();
                             if (input2 != target2) {                      //Comparamos si el número introducido es distinto del generado.
@@ -154,14 +154,14 @@ public class JavaApp {
                                 System.out.println("Incorrecto.");
                                 if (input2 > target2) {                   //Comprueba si el número introducido es mayor.
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Menor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                     }
                                 } else {
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Mayor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
@@ -182,12 +182,12 @@ public class JavaApp {
 
                         break;
                     case 3:
-                        boolean guessed3 = false;                     //Declaramos un booleano.
+                        System.out.println("Has elegido DIFÍCIL.");
+                        boolean guessed3;                    //Declaramos un booleano.
                         int attempt3 = 3;                             //Declaramos un limitador.
                         Random generator3 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target3 = generator3.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println("Has elegido DIFÍCIL.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input3 = keyboard.nextInt();
                             if (input3 != target3) {                      //Comparamos si el número introducido es distinto del generado.
@@ -196,14 +196,14 @@ public class JavaApp {
                                 System.out.println("Incorrecto.");
                                 if (input3 > target3) {                   //Comprueba si el número introducido es mayor.
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Menor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
                                     }
                                 } else {
                                     try {
-                                        Thread.sleep(0500);
+                                        Thread.sleep(500);
                                         System.out.println("¡Mayor!");
                                     } catch (InterruptedException e) {
                                         e.printStackTrace();
@@ -235,7 +235,7 @@ public class JavaApp {
                 for (int par = 0; par <= 40; par++) {
                     if (par % 2 == 0) {
                         try {
-                            Thread.sleep(0500);
+                            Thread.sleep(500);
                             System.out.println(par);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
