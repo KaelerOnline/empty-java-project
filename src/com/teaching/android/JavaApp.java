@@ -15,10 +15,11 @@ public class JavaApp {
             System.out.println("3. Demostración de la lógica aritmética de Java.");
             System.out.println("4. Par o Impar.");
             System.out.println("5. Simple juego de adivinación del número.");
+            System.out.println("6. Impresión de los 20 primeros números pares.");
             Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
             int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
             switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
-                case 1:
+                case 1:                                             //Práctica de impresión en pantalla de distintos tipos de variables con retraso.
                     System.out.println(" ");
                     byte b = 65;         //8bits
                     char c = 'A';        //16bits
@@ -42,7 +43,7 @@ public class JavaApp {
                         e.printStackTrace();
                     }
                     break;
-                case 2:
+                case 2:                                             //Práctica de lógica aritmética básica de java.
                     int a = 10; b = 5;
                     System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                     try {
@@ -62,7 +63,7 @@ public class JavaApp {
                     }
                     break;
 
-                case 3:
+                case 3:                                             //Práctica de lógica aritmética interna de java.
                     System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                     try {
                         Thread.sleep(2500);                 //Retrasa la impresión de unas operaciónes aritméticas.
@@ -75,7 +76,7 @@ public class JavaApp {
                         e.printStackTrace();
                     }
                     break;
-                case 4:
+                case 4:                                         //Práctica de if/else con juego básico de par/impar
                     System.out.println(" ");
                     System.out.println("Introduzca un número."); //Pide un numero para guardar.
                     int numero= keyboard.nextInt();
@@ -88,7 +89,7 @@ public class JavaApp {
                         System.out.println (numero+" es impar");
                     }
                     break;
-                case 5:
+                case 5:                                         //Práctica de bucle while/do while con juego básico.
                     boolean guessed= false;                     //Declaramos un booleano.
                     int attempt= 3;                             //Declaramos un limitador.
                     Random generator= new Random();             //Hacemos que el sistema prepare un generador aleatorio.
@@ -120,6 +121,12 @@ public class JavaApp {
                         System.out.println("El número correcto era:"+target);
                     }
 
+                    break;
+
+                case 6:                                     //Práctica básica de bucle FOR con números pares.
+                    for(int par=0; par<=40; par=par+2){
+                        System.out.println(par);
+                    }
                     break;
 
                 default:                                        //En caso de que no se obtenga con Scanner un valor que valga para
