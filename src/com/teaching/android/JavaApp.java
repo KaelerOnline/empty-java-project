@@ -103,7 +103,7 @@ public class JavaApp {
                         Random generator = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target = generator.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println(" ");
+                            System.out.println("Has elegido FÁCIL.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input = keyboard.nextInt();
                             if (input != target) {                      //Comparamos si el número introducido es distinto del generado.
@@ -145,7 +145,7 @@ public class JavaApp {
                         Random generator2 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target2 = generator2.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println(" ");
+                            System.out.println("Has elegido INTERMEDIO.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input2 = keyboard.nextInt();
                             if (input2 != target2) {                      //Comparamos si el número introducido es distinto del generado.
@@ -187,7 +187,7 @@ public class JavaApp {
                         Random generator3 = new Random();             //Hacemos que el sistema prepare un generador aleatorio.
                         int target3 = generator3.nextInt(10) + 1;//Declaramos que una variable sea un número aleatorio.
                         do {                                         //Bucle para iniciar el juego.
-                            System.out.println(" ");
+                            System.out.println("Has elegido DIFÍCIL.");
                             System.out.println("Adivina del 1 al 10."); //Pide un numero para guardar.
                             int input3 = keyboard.nextInt();
                             if (input3 != target3) {                      //Comparamos si el número introducido es distinto del generado.
