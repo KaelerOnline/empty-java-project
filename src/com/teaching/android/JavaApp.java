@@ -18,6 +18,7 @@ public class JavaApp {
         System.out.println("6. Impresión de los 20 primeros números pares.");
         System.out.println("7. Ejercicio 'Persona'.");
         System.out.println("8. Ejercicio 'Punto'.");
+        System.out.println("9. Ejercicio 'Circulo'");
         Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
         int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
         switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
@@ -266,9 +267,9 @@ public class JavaApp {
                 break;
 
             case 6:                                     //Práctica básica de bucle FOR con números pares.
-                for (int par = 0; par <= 40; par++) {
-                    if (par % 2 == 0) {
-                        try {
+                for (int par = 0; par <= 40; par++) {   //Creamos un bucle que nos permita ver los 40
+                    if (par % 2 == 0) {                 //primeros números, comprobamos si son primos
+                        try {                           // y si lo son serán impresos en pantalla.
                             Thread.sleep(500);
                             System.out.println(par);
                         } catch (InterruptedException e) {
@@ -320,6 +321,24 @@ public class JavaApp {
                     System.out.println("p2 es ahora {x=" + p2.getX() + ", y=" + p2.getY() + "}");
                     Thread.sleep(500);
                     System.out.println(p2.distanciaP(p1));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case 9:                                 //Práctica de creación y uso de clases y métodos.
+                try {
+                    System.out.println(" ");
+                    Thread.sleep(500);
+                    Circulo circulo = new Circulo(5,2,3);
+                    Thread.sleep(500);
+                    System.out.println(circulo);
+                    System.out.println("con area "+circulo.getArea());
+                    Thread.sleep(1000);
+                    Punto p = new Punto(2,3);//Para que el método que pide un objeto de clase
+                    Circulo circulo2 = new Circulo(p, 5);//punto funcione se há de crear un
+                    System.out.println(circulo2);              //objeto en punto.
+                    System.out.println("con circunferencia de "+circulo2.getCircumference());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

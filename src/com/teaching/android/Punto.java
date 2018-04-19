@@ -35,6 +35,6 @@ public class Punto {            //Creamos una clase y le asignamos unos atributo
     }                                                                       //un punto.
 
     public String toString() {  //Creamos un método que nos permite mostrar en pantalla los atributos
-        return "es {" + "x=" + x + ", y=" + y + '}';//de un objeto creado en un String cuando se le llame.
+        return "x=" + x + ", y=" + y ;//de un objeto creado en un String cuando se le llame.
     }
 }
