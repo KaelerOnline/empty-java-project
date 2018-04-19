@@ -32,7 +32,7 @@ public class Circulo {
     }                                           //
 
     public double getCircumference(){           //Método que calcula y devuelve el resultado de la
-        return Math.PI * Math.pow(this.radio,2);  //circunferencia/el area.
+        return 2* Math.PI * this.radio;  //circunferencia/el area.
     }                                           //
     public double getArea(){                    //
         return Math.PI * Math.pow(this.radio,2);  //
