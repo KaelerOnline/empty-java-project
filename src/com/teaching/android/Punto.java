@@ -20,7 +20,7 @@ public class Punto {            //Creamos una clase y le asignamos unos atributo
     public int getY() {         //
         return y;               //
     }                           //
-    
+
     public Punto(int x, int y) {//Creamos un constructor que nos permite crear objetos con atributos
         this.x = x;             //de una sentada.
         this.y = y;

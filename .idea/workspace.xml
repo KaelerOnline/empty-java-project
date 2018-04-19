@@ -20,8 +20,8 @@
           <file leaf-file-name="JavaApp.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/teaching/android/JavaApp.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="295">
-                  <caret line="314" column="31" lean-forward="true" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
+                <state relative-caret-position="351">
+                  <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -52,7 +52,7 @@
             <entry file="file://$PROJECT_DIR$/src/com/teaching/android/Punto.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="374">
-                  <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
                   <folding>
                     <element signature="e#210#211#0" expanded="true" />
                     <element signature="e#234#235#0" expanded="true" />
@@ -83,8 +83,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/teaching/android/Persona.java" />
-        <option value="$PROJECT_DIR$/src/com/teaching/android/JavaApp.java" />
         <option value="$PROJECT_DIR$/src/com/teaching/android/Punto.java" />
+        <option value="$PROJECT_DIR$/src/com/teaching/android/JavaApp.java" />
       </list>
     </option>
   </component>
@@ -533,20 +533,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/teaching/android/JavaApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="314" column="31" lean-forward="true" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/teaching/android/Punto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#210#211#0" expanded="true" />
             <element signature="e#234#235#0" expanded="true" />
@@ -554,6 +544,16 @@
             <element signature="e#291#292#0" expanded="true" />
             <element signature="e#316#317#0" expanded="true" />
             <element signature="e#340#341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/teaching/android/JavaApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

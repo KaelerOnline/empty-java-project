@@ -278,13 +278,13 @@ public class JavaApp {
                 }
                 break;
             case 7:                                 //Práctica de creación y uso de clases y métodos.
-                try {
-                    System.out.println(" ");
-                    Thread.sleep(500);
+                try {   //Cuando se hace uso de un método en una clase distinta para crear un objeto
+                    System.out.println(" ");    //hay que decirle a la clase que va a crear un nuevo
+                    Thread.sleep(500);                //objeto, lo que hará que pida atributos.
                     Persona p1 = new Persona("Paco", 200f);
                     Thread.sleep(500);
                     Persona p2 = new Persona("Pepe", 0f);
-                    Thread.sleep(500);
+                    Thread.sleep(500);     //Es posible obtener atributos concretos de objetos.
                     System.out.println(p1.getNombre() + " tiene " + p1.getDinero());
                     Thread.sleep(500);
                     System.out.println(p2.getNombre() + " tiene " + p2.getDinero());
@@ -303,21 +303,21 @@ public class JavaApp {
                 try {
                     System.out.println(" ");
                     Thread.sleep(500);
-                    Punto p1 = new Punto(2,4);
-                    Punto p2 = new Punto(3,5);
+                    Punto p1 = new Punto(2, 4);
+                    Punto p2 = new Punto(3, 5);
                     Thread.sleep(500);
-                    System.out.println("p1 "+p1);
-                    System.out.println("p2 "+p2);
+                    System.out.println("p1 " + p1);
+                    System.out.println("p2 " + p2);
                     Thread.sleep(500);
                     System.out.println(p2.distanciaP(p1));
-                    System.out.println(p2.distancia(2,4));
+                    System.out.println(p2.distancia(2, 4));
                     Thread.sleep(1000);
-                    p1.setX(3);
-                    p1.setY(5);
+                    p1.setX(3);     //Con set podemos cambiar atributos concretos de un objeto desde
+                    p1.setY(5);        //fuera de la clase en la que se encuentra definido el método.
                     p2.setX(2);
                     p2.setY(4);
-                    System.out.println("p1 es ahora {x="+p1.getX()+", y="+p1.getY()+"}");
-                    System.out.println("p2 es ahora {x="+p2.getX()+", y="+p2.getY()+"}");
+                    System.out.println("p1 es ahora {x=" + p1.getX() + ", y=" + p1.getY() + "}");
+                    System.out.println("p2 es ahora {x=" + p2.getX() + ", y=" + p2.getY() + "}");
                     Thread.sleep(500);
                     System.out.println(p2.distanciaP(p1));
                 } catch (InterruptedException e) {
@@ -326,8 +326,8 @@ public class JavaApp {
 
                 break;
 
-            default:                                        //En caso de que no se obtenga con Scanner un valor que valga para
-                //Switch/Case, se irá a la opcion por defecto y cerrará.
+            default://En caso de que Switch no encuentre un Case con un valor viable,
+                    //el programa irá a la opcion por defecto y cerrará.
                 System.out.println("No ha introducido una opción correcta.");
                 break;
         }
