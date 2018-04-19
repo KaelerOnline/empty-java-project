@@ -1,6 +1,5 @@
 package com.teaching.android;
 
-import java.sql.SQLOutput;
 import java.util.Random;                                        //Declaramos paquetes de funciones que hay que importar para usar más tarde.
 import java.util.Scanner;
 
@@ -18,6 +17,7 @@ public class JavaApp {
         System.out.println("5. Simple juego de adivinación del número.");
         System.out.println("6. Impresión de los 20 primeros números pares.");
         System.out.println("7. Ejercicio 'Persona'.");
+        System.out.println("8. Ejercicio 'Punto'.");
         Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
         int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
         switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
@@ -32,14 +32,21 @@ public class JavaApp {
                 double d = 65.55;    //64bits
                 boolean bol = true;  //1bit
                 try {
-                    Thread.sleep(2500);                 //Retrasa la impresión de los distintos tipos de variables.
+                    Thread.sleep(500);                 //Retrasa la impresión de los distintos tipos de variables.
                     System.out.println(b);
+                    Thread.sleep(500);
                     System.out.println(c);
+                    Thread.sleep(500);
                     System.out.println(s);
+                    Thread.sleep(500);
                     System.out.println(i);
+                    Thread.sleep(500);
                     System.out.println(l);
+                    Thread.sleep(500);
                     System.out.println(f);
+                    Thread.sleep(500);
                     System.out.println(d);
+                    Thread.sleep(500);
                     System.out.println(bol);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -50,16 +57,25 @@ public class JavaApp {
                 b = 5;
                 System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                 try {
-                    Thread.sleep(2500);                 //Retrasa la impresión de unas operaciónes aritméticas.
+                    Thread.sleep(500);                 //Retrasa la impresión de unas operaciónes aritméticas.
                     System.out.println(a + b);
+                    Thread.sleep(500);
                     System.out.println(a - b);
+                    Thread.sleep(500);
                     System.out.println(a * b);
+                    Thread.sleep(500);
                     System.out.println(a / b);
+                    Thread.sleep(500);
                     System.out.println(a % b);
+                    Thread.sleep(500);
                     System.out.println(++a);
+                    Thread.sleep(500);
                     System.out.println(--a);
+                    Thread.sleep(500);
                     System.out.println(a++);
+                    Thread.sleep(500);
                     System.out.println(a--);
+                    Thread.sleep(500);
                     System.out.println(a);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -69,26 +85,36 @@ public class JavaApp {
             case 3:                                             //Práctica de lógica aritmética interna de java.
                 System.out.println(" ");                      //Fuerza a crear un espacio en blanco como separador.
                 try {
-                    Thread.sleep(2500);                 //Retrasa la impresión de unas operaciónes aritméticas.
-                    System.out.println(2 + 5 - 3 * 2);
-                    System.out.println(2 * 4 * 2 / 2);
-                    System.out.println(1 / 2);
-                    System.out.println(5 * (1 / 2));
-                    System.out.println(5f * 1 / 2);
+                    Thread.sleep(500);                 //Retrasa la impresión de unas operaciónes aritméticas.
+                    System.out.println("2+5-3*2= " + (2 + 5 - 3 * 2));
+                    Thread.sleep(500);
+                    System.out.println("2*4*2/2= " + (2 * 4 * 2 / 2));
+                    Thread.sleep(500);
+                    System.out.println("1/2= " + (1 / 2));
+                    Thread.sleep(500);
+                    System.out.println("5*(1/2)= " + (5 * (1 / 2)));
+                    Thread.sleep(500);
+                    System.out.println("5f*(1/2)= " + (5f * 1 / 2));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 break;
-            case 4:                                         //Práctica de if/else con juego básico de par/impar
-                System.out.println(" ");
-                System.out.println("Introduzca un número."); //Pide un numero para guardar.
-                int numero = keyboard.nextInt();
-                if (numero % 2 == 0) {                          //Comprueba si la variable NUMERO es divisible por 2.
-                    //En caso de serlo se imprimirá en pantalla que es par.
-                    //En caso contrario se imprimirá en pantalla que es impar.
-                    System.out.println(numero + " es par");
-                } else {
-                    System.out.println(numero + " es impar");
+            case 4://Práctica de if/else con juego básico de par/impar
+                try {
+                    Thread.sleep(500);
+
+                    System.out.println(" ");
+                    System.out.println("Introduzca un número."); //Pide un numero para guardar.
+                    int numero = keyboard.nextInt();
+                    if (numero % 2 == 0) {                          //Comprueba si la variable NUMERO es divisible por 2.
+                        //En caso de serlo se imprimirá en pantalla que es par.
+                        //En caso contrario se imprimirá en pantalla que es impar.
+                        System.out.println(numero + " es par");
+                    } else {
+                        System.out.println(numero + " es impar");
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
                 break;
             case 5:                                         //Práctica de bucle while/do while con juego básico.
@@ -252,20 +278,49 @@ public class JavaApp {
                 }
                 break;
             case 7:                                 //Práctica de creación y uso de clases y métodos.
-                Persona p1 = new Persona("Paco",200f);
-                Persona p2 = new Persona("Pepe",0f);
                 try {
+                    System.out.println(" ");
+                    Thread.sleep(500);
+                    Persona p1 = new Persona("Paco", 200f);
+                    Thread.sleep(500);
+                    Persona p2 = new Persona("Pepe", 0f);
                     Thread.sleep(500);
                     System.out.println(p1.getNombre() + " tiene " + p1.getDinero());
                     Thread.sleep(500);
                     System.out.println(p2.getNombre() + " tiene " + p2.getDinero());
                     Thread.sleep(500);
-                    p2.Pagar(p1, 200f);
+                    p2.Pagar(p1, 200);
                     Thread.sleep(500);
                     System.out.println("Ahora " + p1.getNombre() + " tiene " + p1.getDinero());
                     Thread.sleep(500);
                     System.out.println("Ahora " + p2.getNombre() + " tiene " + p2.getDinero());
-                }   catch(InterruptedException e){
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case 8:                                 //Práctica de creación y uso de clases y métodos.
+                try {
+                    System.out.println(" ");
+                    Thread.sleep(500);
+                    Punto p1 = new Punto(2,4);
+                    Punto p2 = new Punto(3,5);
+                    Thread.sleep(500);
+                    System.out.println("p1 "+p1);
+                    System.out.println("p2 "+p2);
+                    Thread.sleep(500);
+                    System.out.println(p2.distanciaP(p1));
+                    System.out.println(p2.distancia(2,4));
+                    Thread.sleep(1000);
+                    p1.setX(3);
+                    p1.setY(5);
+                    p2.setX(2);
+                    p2.setY(4);
+                    System.out.println("p1 es ahora {x="+p1.getX()+", y="+p1.getY()+"}");
+                    System.out.println("p2 es ahora {x="+p2.getX()+", y="+p2.getY()+"}");
+                    Thread.sleep(500);
+                    System.out.println(p2.distanciaP(p1));
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
