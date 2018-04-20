@@ -1,7 +1,5 @@
 package com.teaching.android;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;                                        //Declaramos paquetes de funciones que hay que importar para usar más tarde.
 import java.util.Scanner;
 
@@ -22,6 +20,7 @@ public class JavaApp {
         System.out.println("8. Ejercicio 'Punto'.");
         System.out.println("9. Ejercicio 'Circulo'");
         System.out.println("10.Práctica sobre arrays y matrices.");
+        System.out.println("11.Práctica sobre matrices.");
         Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
         int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
         switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
@@ -366,6 +365,27 @@ public class JavaApp {
                         }
                         System.out.println();
                     }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case 11:                                 //Práctica de arrays y matrices desde clase.
+                try {
+                    System.out.println(" ");
+                    Thread.sleep(500);
+                    int [] numa= {3,2,1,1,2,3,2,3,1};
+                    int [] numb= {1,1,2,2,1,1,1,2,1};
+                    Matriz matriz1 = new Matriz(3);
+                    Matriz matriz2 = new Matriz(3);
+                    matriz1.AsignarDatos(numa,3);
+                    matriz2.AsignarDatos(numb,3);
+
+                    matriz1.Mostrar();
+                    Thread.sleep(1000);
+                    System.out.println(" ");
+                    matriz2.Mostrar();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
