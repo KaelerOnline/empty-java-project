@@ -1,5 +1,7 @@
 package com.teaching.android;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;                                        //Declaramos paquetes de funciones que hay que importar para usar más tarde.
 import java.util.Scanner;
 
@@ -19,6 +21,7 @@ public class JavaApp {
         System.out.println("7. Ejercicio 'Persona'.");
         System.out.println("8. Ejercicio 'Punto'.");
         System.out.println("9. Ejercicio 'Circulo'");
+        System.out.println("10.Práctica sobre arrays y matrices.");
         Scanner keyboard = new Scanner(System.in);            //Hacemos que el sistema espere a que se introduzca un valor con el teclado.
         int valor = keyboard.nextInt();                       //Guardamos dicho valor como variable.
         switch (valor) {                                      //Efectua una comprobación de cual opción se ejecutará dependiendo de la variable.
@@ -339,6 +342,30 @@ public class JavaApp {
                     Circulo circulo2 = new Circulo(p, 5);//punto funcione se há de crear un
                     System.out.println(circulo2);              //objeto en punto.
                     System.out.println("con circunferencia de "+circulo2.getCircumference());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                break;
+            case 10:                                 //Práctica de arrays y matrices.
+                try {
+                    System.out.println(" ");
+                    Thread.sleep(500);
+                    int[][] numa = new int[3][3];   //Creación de un array bidimensional o matriz.
+                    int[] numb= {3,2,1,1,2,3,2,3,1};//Creación de un array unidimensional
+                    int indice=0;                   //Creación de un índice.
+                    for (int ia=0; ia<numa.length; ia++){//Bucle for que hará que pasemos por la posición A de la matriz.
+                        for (int ib=0; ib<numa.length; ib++){//Bucle for que hará que pasemos por la posición B de la matriz.
+                            numa[ia][ib]=numb[indice++];    //Asignación en posición A,B de la matriz del valor del array
+                        }                                   //en la posición INDICE.
+                    }
+                    for (int ia=0; ia<numa.length; ia++){
+                        Thread.sleep(500);
+                        for (int ib=0; ib<numa.length; ib++){
+                            System.out.print(numa[ia][ib]+" ");
+                        }
+                        System.out.println();
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
