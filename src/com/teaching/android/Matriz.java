@@ -32,10 +32,10 @@ public class Matriz {
      */
     public void Mostrar (){
         try {
-            for (int ia = 0; ia < Matriz.length; ia++) {
+            for (int[] aMatriz : Matriz) {
                 Thread.sleep(500);
                 for (int ib = 0; ib < Matriz.length; ib++) {
-                    System.out.print(this.Matriz[ia][ib] + " ");    //Bucle para mostrar en pantalla
+                    System.out.print(aMatriz[ib] + " ");    //Bucle para mostrar en pantalla
                 }                                                   //los valores del objeto.
                 System.out.println();
             }
