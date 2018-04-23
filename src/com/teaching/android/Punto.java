@@ -7,33 +7,63 @@ public class Punto {            //Creamos una clase y le asignamos unos atributo
     public Punto() {            //Creamos un constructor vacío.
     }
 
-    public void setX(int x) {   //Creamos métodos que nos permitirán asignar valores concretos
-        this.x = x;             //a los atributos concretos de los objetos que se crearán con set.
-    }                           //
-    //get nos permite obtener los atributos concretos de los objetos
-    public int getX() {         //creados para ser usados fuera de la clase.
-        return x;               //
-    }                           //
-    public void setY(int y) {   //
-        this.y = y;             //
-    }                           //
-    public int getY() {         //
-        return y;               //
-    }                           //
+    /**
+     * Getters y Setters que no estamos utilizando para asignar y recibir valores de los atributos del
+     * objeto asignado.
+     * @param x
+     */
+    public void setX(int x) {
+        this.x = x;
+    }
+    public int getX() {
+        return x;
+    }
+    /**
+     * @param y
+     */
+    public void setY(int y) {
+        this.y = y;
+    }
+    public int getY() {
+        return y;
+    }
 
-    public Punto(int x, int y) {//Creamos un constructor que nos permite crear objetos con atributos
-        this.x = x;             //de una sentada.
+    /**
+     * Constructor que permite asignar a un objeto de clase Punto con unos parametros Integer x e y.
+     * @param x
+     * @param y
+     */
+    public Punto(int x, int y) {
+        this.x = x;
         this.y = y;
     }
 
-    public double distanciaP(Punto p) { //Creamos un método que nos permite calcular la distancia de
-        return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));//un punto a otro.
+    /**
+     * Método que permite calcular la distancia de un objeto Punto a otro pasado como parámetro
+     * y mostrar el resultado en consola.
+     * @param p
+     * @return
+     */
+    public double distanciaP(Punto p) {
+        return Math.sqrt(Math.pow(this.x - p.x, 2) + Math.pow(this.y - p.y, 2));
     }
 
-    public double distancia(int x, int y) {//Creamos un método que nos permite calcular la distancia
-        return Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2));//de unas coordenadas a
-    }                                                                       //un punto.
+    /**
+     * Método que permite calcular la distancia de un objeto Punto a unas coordenadas pasadas
+     * como parámetros de tipo Integer y mostrar el resultado en consola.
+     * @param x objeto de tipo Integer.
+     * @param y objeto de tipo Integer.
+     * @return
+     */
+    public double distancia(int x, int y) {
+        return Math.sqrt(Math.pow(this.x - x, 2) + Math.pow(this.y - y, 2));
+    }
 
+    /**
+     * Método que permite mostrar los valores del objeto de clase Punto pasado como parámetro
+     * cuando se le llame.
+     * @return
+     */
     public String toString() {  //Creamos un método que nos permite mostrar en pantalla los atributos
         return "x=" + x + ", y=" + y ;//de un objeto creado en un String cuando se le llame.
     }

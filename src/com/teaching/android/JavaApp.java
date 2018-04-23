@@ -383,8 +383,10 @@ public class JavaApp {
 
                     matriz1.Mostrar();
                     Thread.sleep(1000);
-                    System.out.println(" ");
+                    System.out.println();
                     matriz2.Mostrar();
+                    matriz2.Suma(matriz1);          //Este método sumará los valores de los objetos.
+                    matriz2.Producto(matriz1);      //Este método multiplicará los valores de los objetos.
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
