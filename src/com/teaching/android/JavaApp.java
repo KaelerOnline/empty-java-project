@@ -358,10 +358,10 @@ public class JavaApp {
                             numa[ia][ib]=numb[indice++];    //Asignación en posición A,B de la matriz del valor del array
                         }                                   //en la posición INDICE.
                     }
-                    for (int ia=0; ia<numa.length; ia++){
+                    for (int[] aNuma : numa) {
                         Thread.sleep(500);
-                        for (int ib=0; ib<numa.length; ib++){
-                            System.out.print(numa[ia][ib]+" ");
+                        for (int ib = 0; ib < numa.length; ib++) {
+                            System.out.print(aNuma[ib] + " ");
                         }
                         System.out.println();
                     }
