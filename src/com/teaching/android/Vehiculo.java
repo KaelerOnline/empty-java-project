@@ -12,8 +12,8 @@ public abstract class Vehiculo {
         this.precio = precio;
     }
 
-    public void Reserva (boolean reservar){
-        reservado = reservar;
+    public void Reservar(boolean reservado) {
+        this.reservado = reservado;
     }
 
     public String getMatricula() {
@@ -21,6 +21,6 @@ public abstract class Vehiculo {
     }
 
     public String toString() {
-        return "Vehiculo{" + matricula+ " " + color + " " +  precio + "€" + '}';
+        return "{" + matricula+ " " + color + " " +  precio + "€" + '}';
     }
 }

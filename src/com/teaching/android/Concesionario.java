@@ -14,13 +14,29 @@ public class Concesionario {
         this.telefono = telefono;
     }
 
-    public void Insertar(Vehiculo v){
-        for(int i=0; i<vehiculo.length; i++){
-            if(vehiculo[i] == null){
-                vehiculo[i]=v;
-                break;
+    public void Insertar(Vehiculo v) throws ConcesionarioException {
+            int i=0;
+            if(i>=vehiculo.length) {
+                throw new ConcesionarioException("Entrada fuera de índice de Array.");
+            }else{
+                for (; i < vehiculo.length; i++) {
+                    if (vehiculo[i] == null) {
+                        vehiculo[i] = v;
+                        break;
+                    }
+                }
             }
-        }
+    }
+
+    public void Buscar (Vehiculo v) throws BuscarException {
+        int i=0;
+        if(i<vehiculo.length){
+            for (; i<vehiculo.length; i++) {
+                if (v.getMatricula().equals(vehiculo[i].getMatricula())) {
+                    System.out.println(v);
+                }
+            }
+        } else throw new BuscarException("El índice de Array ha excedido su longitud.");
     }
 
     public String toString() {
