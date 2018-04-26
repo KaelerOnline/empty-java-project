@@ -21,6 +21,6 @@ public abstract class Vehiculo {
     }
 
     public String toString() {
-        return "{" + matricula+ " " + color + " " +  precio + "€" + '}';
+        return matricula + ", " + color + ", " +  precio + "€, reservado: " + reservado;
     }
 }

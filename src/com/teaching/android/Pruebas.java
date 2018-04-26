@@ -19,12 +19,13 @@ public class Pruebas {
             Moto m2 = new Moto(250, "MA546", "verde", 2500f);
             concesionario.Insertar(m2);
             Moto m3 = new Moto(125, "MA879", "amarillo", 1750f);
-            concesionario.Buscar(m3);
+            concesionario.Reservar(m2);
+            concesionario.Buscar(m2);
             System.out.println(concesionario);
         } catch (ConcesionarioException ex) {
             System.out.println("Imposible insertar nuevo vehículo.");
             System.out.println("Error: " + ex);
-        } catch (BuscarException ex) {
+        } catch (Exception ex) {
             System.out.println("Imposible encontrar vehículo.");
             System.out.println("Error: "+ ex);
 
